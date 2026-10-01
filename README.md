@@ -65,3 +65,8 @@ The op-mapping test passes offline with no network. The demo runs the full path
 through Foreman's real runtime and the hosted read. On a real run, one gap remains,
 Foreman does not yet persist the git diff on its observe events, so the adapter
 pairs the events with a git snapshot, which the first real comparison wires up.
+
+
+---
+
+If the read caught something in your own run, a star on this repository helps other teams find it.
