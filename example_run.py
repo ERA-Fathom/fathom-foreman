@@ -10,8 +10,8 @@ Two modes.
   python example_run.py --repo PATH --run RUN_ID
       Read a persisted Foreman run from PATH/.foreman/runs/RUN_ID and print the same.
 
-Both modes send the op stream to the hosted Fathom read through the public
-`fathom-read` client. Reads run free at a low anonymous limit, so no key is needed
+Both modes send the op stream to the hosted Right Rudder read through the public
+`right-rudder` client. Reads run free at a low anonymous limit, so no key is needed
 to try this. Pass --key to use your own.
 """
 
@@ -22,7 +22,7 @@ import asyncio
 import json
 from pathlib import Path
 
-import foreman_fathom as ff
+import foreman_right_rudder as ff
 
 
 def _print(comp: dict) -> None:
@@ -76,7 +76,7 @@ def main(argv=None) -> int:
     ap.add_argument("--demo", action="store_true", help="run a zero-spend planted demo")
     ap.add_argument("--repo", type=Path, help="repository holding a persisted run")
     ap.add_argument("--run", help="run id under REPO/.foreman/runs")
-    ap.add_argument("--key", default=None, help="optional Fathom key; reads run free without one")
+    ap.add_argument("--key", default=None, help="optional Right Rudder key; reads run free without one")
     a = ap.parse_args(argv)
 
     if a.demo:

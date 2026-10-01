@@ -1,7 +1,9 @@
-# fathom-foreman
+# right-rudder-foreman
+
+> Fathom is now Right Rudder, by Embedded Risk Analytics. This repository was fathom-foreman, and the adapter module is now `foreman_right_rudder.py`.
 
 A committed-state coherence read for [Foreman](https://github.com/thruwire/foreman),
-built as an adapter over the hosted Fathom read.
+built as an adapter over the hosted Right Rudder read.
 
 Foreman supervises a Codex worker with TypeSafe's Jev. Jev answers the semantic
 questions each step, progress, completeness, tests, stuck, off-track, and a
@@ -28,8 +30,8 @@ quiet.
 ## Install and run
 
 ```
-pip install fathom-read
-pip install -e .        # or drop foreman_fathom.py next to your code
+pip install right-rudder
+pip install -e .        # or drop foreman_right_rudder.py next to your code
 python example_run.py --demo
 ```
 
@@ -47,17 +49,17 @@ Reads run free at a low anonymous limit, so no key is needed to try this. Pass
 ## The boundary
 
 This package is the mapping. It turns a Foreman run into an op stream and calls the
-public `fathom-read` client, which sends the ops to the hosted service and returns
+public `right-rudder` client, which sends the ops to the hosted service and returns
 the verdict. The read's computation, and the repair beyond it, stay in the service.
 The extraction heuristics in `parse_diff` and `parse_output_refs` are the layer to
 tune against real Codex output, and the op mapping does not change.
 
 ## Files
 
-- `foreman_fathom.py`, the adapter, the op mapping, the read call, and the
+- `foreman_right_rudder.py`, the adapter, the op mapping, the read call, and the
   complementarity report.
 - `example_run.py`, the demo and the reader for a persisted run.
-- `test_foreman_fathom.py`, the offline test of the op mapping.
+- `test_foreman_right_rudder.py`, the offline test of the op mapping.
 
 ## Status
 

@@ -1,17 +1,17 @@
-"""Offline test for the fathom-foreman op mapping.
+"""Offline test for the right-rudder-foreman op mapping.
 
 This validates the adapter, that a Foreman run maps to the right committed-state op
 stream, with no network and no read logic in the repo. The read itself runs in the
-hosted Fathom service and is exercised by example_run.py. Here we check that the ops
+hosted Right Rudder service and is exercised by example_run.py. Here we check that the ops
 encode the conditions the read looks for, a reference to something never committed,
 a re-recorded file or symbol, and clean references that resolve.
 
-Run: python test_foreman_fathom.py
+Run: python test_foreman_right_rudder.py
 """
 
 from __future__ import annotations
 
-from foreman_fathom import ForemanStep, steps_to_ops
+from foreman_right_rudder import ForemanStep, steps_to_ops
 
 
 def _adds(ops):
@@ -40,7 +40,7 @@ def main() -> int:
         ok = ok and cond
         print(f"  {'PASS' if cond else 'FAIL'}  {name}{('  ' + detail) if detail else ''}")
 
-    print("=== fathom-foreman op-mapping test (offline) ===")
+    print("=== right-rudder-foreman op-mapping test (offline) ===")
 
     # A. CLEAN. A reference to a file committed the same step resolves.
     clean = steps_to_ops([ForemanStep(

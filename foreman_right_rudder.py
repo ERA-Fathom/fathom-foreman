@@ -1,4 +1,4 @@
-"""foreman-fathom — a committed-state coherence read for Foreman (thruwire/foreman).
+"""right-rudder-foreman, a committed-state coherence read for Foreman (thruwire/foreman).
 
 Foreman supervises a Codex worker with TypeSafe's Jev. Jev answers the semantic
 questions each step, progress, completeness, tests, stuck, off-track, and a
@@ -13,12 +13,12 @@ it did. A claim that references a file or symbol the record never committed read
 amnesia or confabulation. A file or symbol the record commits twice reads as
 redundant work.
 
-The read runs in the hosted Fathom service. This module maps a Foreman run to the
-op stream and calls the public `fathom-read` client, which sends the ops to the
+The read runs in the hosted Right Rudder service. This module maps a Foreman run to the
+op stream and calls the public `right-rudder` client, which sends the ops to the
 service and returns the verdict. It contains the mapping only. The read's
 computation, and the repair beyond it, stay in the service.
 
-Install: pip install fathom-read
+Install: pip install right-rudder
 """
 
 from __future__ import annotations
@@ -28,7 +28,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Iterable
 
-import fathom_read as fr
+import right_rudder as fr
 
 # --- normalized run shape -----------------------------------------------------
 
